@@ -21,9 +21,9 @@ class bayesregress():
     Sn=[]
     ftrue=[]
 
-    def polybasis(self,n):
-        self.feat=basisfuncs.polynomial(n)
-        self.model=np.zeros((n+1,1)) # initialize model
+    def polybasis(self,d):
+        self.feat=basisfuncs.polynomial(d)
+        self.model=np.zeros((d+1,1)) # initialize model
         self.m0=self.model
 
     def rbfbasis(self,l,mu=None):
@@ -117,5 +117,5 @@ class bayesregress():
         top=fstar+se
         bot=fstar-se
         plt.fill_between(xtest[:,0],top[:,0],bot[:,0],color='blue',alpha=0.3)
-        fig1.show()
+        #fig1.show()
         return (fig1)

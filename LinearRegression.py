@@ -15,8 +15,8 @@ class regress():
     rsqrd=[]
     ftrue=[]
 
-    def polybasis(self,n):
-        self.feat=basisfuncs.polynomial(n)
+    def polybasis(self,d):
+        self.feat=basisfuncs.polynomial(d)
 
     def rbfbasis(self,l,mu=None):
         if not mu:
