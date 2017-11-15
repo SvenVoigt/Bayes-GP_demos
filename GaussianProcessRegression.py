@@ -121,8 +121,8 @@ class gpprocess():
         ax5=fig5.add_subplot(111)
         ax5.scatter(self.xtrain,self.ytrain,marker="+",color="b")
         ax5.plot(xtest,fstar+se,color="r")
-        ax5.plot(xtest,fstar-se,color="r")
-        ax5.plot(xtest,fstar,color="b",label='GPInterp')
+        ax5.plot(xtest,fstar-se,color="r", label='0.95 conf')
+        ax5.plot(xtest,fstar,color="b",label='GP mean')
         top=fstar+se
         bot=fstar-se
         plt.fill_between(xtest[:,0],top[:,0],bot[:,0],color='blue',alpha=0.3)

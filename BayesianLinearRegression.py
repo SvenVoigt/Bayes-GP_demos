@@ -112,10 +112,11 @@ class bayesregress():
         ax=fig1.add_subplot(111)
         ax.scatter(self.xtrain,self.ytrain,marker="+",color="b")
         ax.plot(xtest,fstar+se,color="r")
-        ax.plot(xtest,fstar-se,color="r")
-        ax.plot(xtest,fstar,color="b")
+        ax.plot(xtest,fstar-se,color="r", label="0.95 conf")
+        ax.plot(xtest,fstar,color="b",label="BLR mean")
         top=fstar+se
         bot=fstar-se
         plt.fill_between(xtest[:,0],top[:,0],bot[:,0],color='blue',alpha=0.3)
+        plt.legend()
         #fig1.show()
         return (fig1)
